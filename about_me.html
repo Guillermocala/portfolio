@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#dae2fd",
+                    "on-primary-fixed": "#07006c",
+                    "surface-container-lowest": "#060e20",
+                    "surface-tint": "#c0c1ff",
+                    "primary-fixed": "#e1e0ff",
+                    "inverse-on-surface": "#283044",
+                    "on-tertiary": "#003824",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-secondary": "#003640",
+                    "secondary-container": "#03b5d3",
+                    "on-tertiary-fixed": "#002113",
+                    "error-container": "#93000a",
+                    "surface-dim": "#0b1326",
+                    "primary": "#c0c1ff",
+                    "surface-container-low": "#131b2e",
+                    "error": "#ffb4ab",
+                    "tertiary": "#4edea3",
+                    "surface-container-high": "#222a3d",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "on-tertiary-container": "#000703",
+                    "primary-container": "#8083ff",
+                    "surface": "#0b1326",
+                    "on-error": "#690005",
+                    "tertiary-container": "#00885d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-background": "#dae2fd",
+                    "outline": "#908fa0",
+                    "on-primary": "#1000a9",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-variant": "#2d3449",
+                    "on-secondary-container": "#00424e",
+                    "on-primary-container": "#0d0096",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "inverse-surface": "#dae2fd",
+                    "inverse-primary": "#494bd6",
+                    "on-secondary-fixed": "#001f26",
+                    "secondary": "#4cd7f6",
+                    "surface-container": "#171f33",
+                    "secondary-fixed": "#acedff",
+                    "background": "#0b1326",
+                    "surface-bright": "#31394d",
+                    "outline-variant": "#464554"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-page": "clamp(1rem, 5vw, 4rem)",
+                    "stack-lg": "4rem",
+                    "stack-sm": "1rem",
+                    "stack-md": "2rem",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "h3": ["Space Grotesk"],
+                    "code": ["monospace"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label": ["Inter"],
+                    "h2": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "h3": ["1.5rem", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "code": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.75", "fontWeight": "400"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label": ["0.875rem", {"lineHeight": "1.25", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "h2": ["2.25rem", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["3.75rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-indigo {
+            box-shadow: 0 0 40px -10px rgba(128, 131, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl transition-all duration-300 ease-out font-['Space_Grotesk'] antialiased shadow-2xl shadow-indigo-500/5">
+<div class="flex justify-between items-center h-16 max-w-7xl mx-auto px-8">
+<div class="text-xl font-bold tracking-tighter text-white">DevPortfolio</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 font-medium transition-colors hover:text-white hover:bg-white/5 rounded-md px-3 py-1" href="#">Home</a>
+<a class="text-slate-400 font-medium transition-colors hover:text-white hover:bg-white/5 rounded-md px-3 py-1" href="#">Projects</a>
+<a class="text-indigo-400 font-semibold border-b-2 border-indigo-500 pb-1 px-3 py-1" href="#">About</a>
+<a class="text-slate-400 font-medium transition-colors hover:text-white hover:bg-white/5 rounded-md px-3 py-1" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-colors">terminal</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all">Resume</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<div class="max-w-[1200px] mx-auto px-margin-page">
+<!-- Hero Section -->
+<section class="mb-stack-lg">
+<div class="flex flex-col md:flex-row gap-gutter items-center">
+<div class="flex-1 space-y-stack-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/20 border border-tertiary/20 text-tertiary text-label uppercase">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+                            Available for hire
+                        </div>
+<h1 class="font-h1 text-h1 text-white max-w-2xl">Architecting <span class="text-primary">digital precision</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                            Specializing in high-performance distributed systems and pixel-perfect interface engineering. I turn complex architectural challenges into elegant, scalable realities.
+                        </p>
+</div>
+<div class="w-full md:w-1/3 aspect-square glass-card rounded-xl overflow-hidden glow-indigo">
+<img alt="Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="professional headshot of a software architect in a dark studio setting with soft cyan rim lighting and a minimalist tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA3Z8IAMiad2XAptRzO5s8Y2kuc1i9Szh1oi0hbuk1ztWcYCvyzRIV3gfcm1gBrNALMLoMXiMoEvL0fzyhKgReZdUbJSYiRqOI1FT9gNnS8yZDJvYG5Sf18V-4KRkE5c19O2Y1szxXQ4-yEIe64XZmS5ARfE0AGPXy8GHPnZ_1aK09yfUdw99qsCwXLUL7lv01jbRGpcbQGAvsHWWpMmgYD36jH7XBYBQYOV5GI_HY3sHScTUfwVzSQdBbmQY07-LlZTp5HHPOv-c"/>
+</div>
+</div>
+</section>
+<!-- Biography Bento -->
+<section class="mb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card p-8 rounded-xl">
+<h2 class="font-h2 text-h2 text-white mb-stack-md">Professional Biography</h2>
+<div class="space-y-4 text-on-surface-variant font-body-md">
+<p>My journey in software engineering began at the intersection of aesthetic design and logical rigor. Over the last decade, I've evolved from a full-stack enthusiast into a specialized systems architect focused on developer experience and performance optimization.</p>
+<p>I believe that code is a form of literature—it should be expressive, maintainable, and robust. Whether I'm configuring a Kubernetes cluster or fine-tuning a React component's rendering cycle, my commitment to "Precision over Haste" remains the guiding principle.</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-h3 text-h3 text-secondary mb-4">Core Philosophy</h3>
+<div class="space-y-6">
+<div>
+<span class="text-label text-primary uppercase block mb-1">Architecture</span>
+<p class="text-on-surface font-body-md">Stateless, scalable, and secure by default.</p>
+</div>
+<div>
+<span class="text-label text-primary uppercase block mb-1">User Experience</span>
+<p class="text-on-surface font-body-md">Zero-latency interactions with meaningful feedback.</p>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10">
+<span class="material-symbols-outlined text-4xl text-primary/40">fingerprint</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Journey Timeline -->
+<section class="mb-stack-lg">
+<h2 class="font-h2 text-h2 text-white mb-stack-md text-center">Professional Journey</h2>
+<div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-indigo-500/30 before:to-transparent">
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary bg-background text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[45%] glass-card p-6 rounded-xl hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">Senior Systems Architect</div>
+<time class="font-code text-secondary text-xs bg-secondary-container/10 px-2 py-0.5 rounded">2021 — PRESENT</time>
+</div>
+<div class="text-label text-primary mb-2">CloudTech Solutions</div>
+<p class="text-on-surface-variant text-sm">Leading the migration of legacy monolithic infrastructures to distributed microservices architecture using Go and Rust.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-secondary bg-background text-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">layers</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[45%] glass-card p-6 rounded-xl hover:border-secondary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">Full Stack Engineer</div>
+<time class="font-code text-secondary text-xs bg-secondary-container/10 px-2 py-0.5 rounded">2018 — 2021</time>
+</div>
+<div class="text-label text-primary mb-2">Creative Flow Inc.</div>
+<p class="text-on-surface-variant text-sm">Architected responsive user interfaces and robust backend APIs for high-traffic SaaS applications.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-tertiary bg-background text-tertiary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[45%] glass-card p-6 rounded-xl hover:border-tertiary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">Junior Developer</div>
+<time class="font-code text-secondary text-xs bg-secondary-container/10 px-2 py-0.5 rounded">2016 — 2018</time>
+</div>
+<div class="text-label text-primary mb-2">Alpha Systems</div>
+<p class="text-on-surface-variant text-sm">Focused on automated testing and UI consistency across multi-platform enterprise products.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Let's Connect Section -->
+<section class="mb-stack-lg" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-stack-md">
+<h2 class="font-h2 text-h2 text-white">Let's <span class="text-primary">Connect</span></h2>
+<p class="text-on-surface-variant font-body-lg">Interested in working together or have a question about my technical process? Drop a message and let's start a conversation about your next project.</p>
+<div class="space-y-6 pt-4">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div>
+<span class="text-xs text-slate-500 uppercase tracking-widest block font-label">Direct Email</span>
+<a class="text-on-surface hover:text-primary transition-colors font-h3 text-h3" href="mailto:hello@devportfolio.com">hello@devportfolio.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<span class="text-xs text-slate-500 uppercase tracking-widest block font-label">HQ Location</span>
+<span class="text-on-surface font-h3 text-h3">San Francisco, CA</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 pt-8">
+<a class="h-10 w-10 glass-card rounded-lg flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="h-10 w-10 glass-card rounded-lg flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+</a>
+<a class="h-10 w-10 glass-card rounded-lg flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl shadow-2xl">
+<form class="space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-label text-on-surface-variant uppercase text-xs">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-on-surface" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label text-on-surface-variant uppercase text-xs">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-on-surface" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label text-on-surface-variant uppercase text-xs">Project Type</label>
+<select class="w-full bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary transition-all text-on-surface appearance-none">
+<option>System Architecture</option>
+<option>UI/UX Engineering</option>
+<option>Cloud Infrastructure</option>
+<option>General Inquiry</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label text-on-surface-variant uppercase text-xs">Message</label>
+<textarea class="w-full bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-on-surface" placeholder="How can I help you?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:shadow-[0_0_30px_rgba(128,131,255,0.4)] transition-all flex items-center justify-center gap-2 group" type="submit">
+                                Dispatch Message
+                                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full border-t border-white/5 py-12 font-['Space_Grotesk'] text-sm">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-bold text-white">DevPortfolio</div>
+<p class="text-slate-500">© 2024 DevPortfolio. Built with precision.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-indigo-400 transition-colors opacity-80 hover:opacity-100" href="#">Email</a>
+</div>
+<div class="flex items-center gap-2 text-slate-500">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                Uptime: 99.9%
+            </div>
+</div>
+</footer>
+</body></html>
