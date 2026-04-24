@@ -1,8 +1,13 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+import { setLocale, supportedLocales } from '../i18n'
+
+const { locale, t } = useI18n()
+
 const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'About', to: '/about' },
+  { labelKey: 'nav.home', to: '/' },
+  { labelKey: 'nav.projects', to: '/projects' },
+  { labelKey: 'nav.about', to: '/about' },
 ]
 </script>
 
@@ -14,7 +19,7 @@ const navItems = [
         <span>DevPortfolio</span>
       </RouterLink>
 
-      <div class="nav-links" aria-label="Primary navigation">
+      <div class="nav-links" :aria-label="t('nav.aria')">
         <RouterLink
           v-for="item in navItems"
           :key="item.to"
@@ -22,13 +27,35 @@ const navItems = [
           class="nav-link"
           active-class="nav-link--active"
         >
-          {{ item.label }}
+          {{ t(item.labelKey) }}
         </RouterLink>
       </div>
 
-      <a class="resume-button" href="#" aria-disabled="true" @click.prevent>
-        Resume
-      </a>
+      <div class="nav-actions">
+        <div
+          class="language-switcher"
+          :class="`language-switcher--${locale}`"
+          :aria-label="t('nav.language')"
+          role="group"
+        >
+          <span class="language-switcher__thumb" aria-hidden="true"></span>
+          <button
+            v-for="availableLocale in supportedLocales"
+            :key="availableLocale"
+            type="button"
+            :aria-pressed="locale === availableLocale"
+            :class="{ 'language-switcher__button--active': locale === availableLocale }"
+            class="language-switcher__button"
+            @click="setLocale(availableLocale)"
+          >
+            {{ availableLocale.toUpperCase() }}
+          </button>
+        </div>
+
+        <a class="resume-button" href="#" aria-disabled="true" @click.prevent>
+          {{ t('nav.resume') }}
+        </a>
+      </div>
     </nav>
   </header>
 </template>

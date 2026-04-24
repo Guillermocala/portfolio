@@ -1,13 +1,17 @@
 <script setup>
 import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ProjectCard from '../components/ProjectCard.vue'
-import { projects } from '../data/projects'
+import { useLocalizedProjects } from '../composables/useLocalizedProjects'
 
-const selectedTech = ref('All')
-const techFilters = computed(() => ['All', ...new Set(projects.flatMap((project) => project.stack))])
+const { t } = useI18n()
+const { projects } = useLocalizedProjects()
+const allFilter = 'All'
+const selectedTech = ref(allFilter)
+const techFilters = computed(() => [allFilter, ...new Set(projects.value.flatMap((project) => project.stack))])
 const filteredProjects = computed(() => {
-  if (selectedTech.value === 'All') return projects
-  return projects.filter((project) => project.stack.includes(selectedTech.value))
+  if (selectedTech.value === allFilter) return projects.value
+  return projects.value.filter((project) => project.stack.includes(selectedTech.value))
 })
 </script>
 
@@ -16,16 +20,15 @@ const filteredProjects = computed(() => {
     <section class="container page-header">
       <div class="availability">
         <span></span>
-        Engineering Showcase
+        {{ t('projectsPage.eyebrow') }}
       </div>
-      <h1>Projects</h1>
+      <h1>{{ t('projectsPage.title') }}</h1>
       <p>
-        A curated set of technical projects focused on modular interfaces, maintainable
-        systems, and clear case-study storytelling.
+        {{ t('projectsPage.intro') }}
       </p>
     </section>
 
-    <section class="container filter-row" aria-label="Filter projects by technology">
+    <section class="container filter-row" :aria-label="t('projectsPage.filterAria')">
       <button
         v-for="tech in techFilters"
         :key="tech"
@@ -34,7 +37,7 @@ const filteredProjects = computed(() => {
         type="button"
         @click="selectedTech = tech"
       >
-        {{ tech }}
+        {{ tech === allFilter ? t('projectsPage.all') : tech }}
       </button>
     </section>
 

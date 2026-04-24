@@ -12,6 +12,6 @@ defineProps({
     <div class="visual-grid"></div>
     <div class="visual-panel visual-panel--primary"></div>
     <div class="visual-panel visual-panel--secondary"></div>
-    <div class="visual-orbit"></div>
+    <div class="visual-panel visual-panel--accent"></div>
   </div>
 </template>

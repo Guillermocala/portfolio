@@ -1,8 +1,10 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import ProjectCard from '../components/ProjectCard.vue'
-import TechBadge from '../components/TechBadge.vue'
-import { featuredProject, projects } from '../data/projects'
+import { useLocalizedProjects } from '../composables/useLocalizedProjects'
 
+const { t, tm } = useI18n()
+const { featuredProject, projects } = useLocalizedProjects()
 const stack = ['Vue', 'Vite', 'JavaScript', 'CSS', 'Node.js', 'GitHub Pages']
 </script>
 
@@ -12,19 +14,18 @@ const stack = ['Vue', 'Vite', 'JavaScript', 'CSS', 'Node.js', 'GitHub Pages']
       <div class="hero-copy">
         <div class="availability">
           <span></span>
-          Available for hire
+          {{ t('common.available') }}
         </div>
-        <h1>Building clean digital products with thoughtful code.</h1>
+        <h1>{{ t('home.title') }}</h1>
         <p>
-          I create focused web experiences, scalable frontends, and technical case studies
-          that explain not only what was built, but why it matters.
+          {{ t('home.intro') }}
         </p>
         <div class="action-row">
           <RouterLink class="button button--primary" to="/projects">
-            View Projects
+            {{ t('common.viewProjects') }}
             <span class="material-symbols-outlined">arrow_forward</span>
           </RouterLink>
-          <RouterLink class="button button--secondary" to="/about">About Me</RouterLink>
+          <RouterLink class="button button--secondary" to="/about">{{ t('common.aboutMe') }}</RouterLink>
         </div>
       </div>
 
@@ -34,8 +35,8 @@ const stack = ['Vue', 'Vite', 'JavaScript', 'CSS', 'Node.js', 'GitHub Pages']
           <small>portfolio.vue</small>
         </div>
         <pre><code>const developer = {
-  role: 'Full-Stack Developer',
-  focus: ['Frontend', 'UX', 'Architecture'],
+  role: '{{ t('home.terminalRole') }}',
+  focus: {{ JSON.stringify(tm('home.terminalFocus')) }},
   tools: ['Vue', 'Vite', 'CSS'],
   shipping: true
 }</code></pre>
@@ -44,9 +45,9 @@ const stack = ['Vue', 'Vite', 'JavaScript', 'CSS', 'Node.js', 'GitHub Pages']
 
     <section class="container section-block">
       <div class="section-heading">
-        <span class="eyebrow">Capabilities</span>
-        <h2>The Stack</h2>
-        <p>Technologies selected for a portfolio that stays easy to maintain and deploy.</p>
+        <span class="eyebrow">{{ t('home.capabilities') }}</span>
+        <h2>{{ t('home.stackTitle') }}</h2>
+        <p>{{ t('home.stackDescription') }}</p>
       </div>
       <div class="stack-grid">
         <div v-for="tech in stack" :key="tech" class="stack-item glass-card">
@@ -58,8 +59,8 @@ const stack = ['Vue', 'Vite', 'JavaScript', 'CSS', 'Node.js', 'GitHub Pages']
 
     <section class="container section-block">
       <div class="section-heading">
-        <span class="eyebrow">Selected Work</span>
-        <h2>Featured Project</h2>
+        <span class="eyebrow">{{ t('home.selectedWork') }}</span>
+        <h2>{{ t('home.featuredProject') }}</h2>
       </div>
       <ProjectCard :project="featuredProject" />
       <div class="compact-projects">
