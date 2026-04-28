@@ -1,4 +1,6 @@
 <script setup>
+import TechIcon from './TechIcon.vue'
+
 defineProps({
   label: {
     type: String,
@@ -8,5 +10,8 @@ defineProps({
 </script>
 
 <template>
-  <span class="tech-badge">{{ label }}</span>
+  <span class="tech-badge">
+    <TechIcon :label="label" />
+    {{ label }}
+  </span>
 </template>

@@ -7,7 +7,7 @@ import TechBadge from '../components/TechBadge.vue'
 import { useLocalizedProjects } from '../composables/useLocalizedProjects'
 
 const route = useRoute()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const { projects, findProjectBySlug } = useLocalizedProjects()
 const project = computed(() => findProjectBySlug(route.params.slug))
 const nextProject = computed(() => {
@@ -39,10 +39,21 @@ const nextProject = computed(() => {
             {{ t('common.viewLiveDemo') }}
             <small>{{ t('common.comingSoon') }}</small>
           </button>
-          <a class="button button--secondary" :href="project.repoUrl" target="_blank" rel="noreferrer">
+          <a
+            v-if="project.repoUrl"
+            class="button button--secondary"
+            :href="project.repoUrl"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span class="material-symbols-outlined">code</span>
             {{ t('common.sourceCode') }}
           </a>
+          <button v-else class="button button--disabled" type="button" disabled>
+            <span class="material-symbols-outlined">lock</span>
+            {{ t('common.sourceCode') }}
+            <small>{{ t('common.privateProject') }}</small>
+          </button>
         </div>
       </div>
     </section>

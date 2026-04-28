@@ -1,17 +1,22 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t, tm } = useI18n()
+const { locale, t, tm } = useI18n({ useScope: 'global' })
+const biographyParagraphs = computed(() => {
+  locale.value
+  return tm('about.biographyParagraphs')
+})
+const timeline = computed(() => {
+  locale.value
+  return tm('about.timeline')
+})
 </script>
 
 <template>
   <main class="page">
     <section class="container split-hero">
       <div>
-        <div class="availability">
-          <span></span>
-          {{ t('common.available') }}
-        </div>
         <h1>{{ t('about.title') }}</h1>
         <p>
           {{ t('about.intro') }}
@@ -26,7 +31,7 @@ const { t, tm } = useI18n()
       <article class="glass-card content-card">
         <span class="eyebrow">{{ t('about.biography') }}</span>
         <h2>{{ t('about.biographyTitle') }}</h2>
-        <p v-for="paragraph in tm('about.biographyParagraphs')" :key="paragraph">
+        <p v-for="paragraph in biographyParagraphs" :key="paragraph">
           {{ paragraph }}
         </p>
       </article>
@@ -44,7 +49,7 @@ const { t, tm } = useI18n()
         <h2>{{ t('about.journeyTitle') }}</h2>
       </div>
       <div class="timeline">
-        <article v-for="item in tm('about.timeline')" :key="item.title" class="timeline-item glass-card">
+        <article v-for="item in timeline" :key="item.title" class="timeline-item glass-card">
           <time>{{ item.date }}</time>
           <h3>{{ item.title }}</h3>
           <p>{{ item.text }}</p>

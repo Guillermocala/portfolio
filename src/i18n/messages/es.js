@@ -8,76 +8,86 @@ export default {
     language: 'Idioma',
   },
   common: {
-    available: 'Disponible para trabajar',
+    name: 'Guillermo Cala',
+    fullName: 'Guillermo Adolfo Cala Vargas',
+    role: 'Ingeniero de Sistemas | Desarrollador Full Stack Web',
+    phone: '+57 300 2047995',
+    location: 'Santa Marta, Colombia',
     viewProjects: 'Ver proyectos',
     viewProject: 'Ver proyecto',
     aboutMe: 'Sobre mí',
     sourceCode: 'Código fuente',
+    privateProject: 'Proyecto privado',
     viewLiveDemo: 'Ver demo en vivo',
     comingSoon: 'Próximamente',
     caseStudy: 'Caso de estudio',
   },
   home: {
-    title: 'Construyendo productos digitales limpios con código bien pensado.',
+    title: 'Construyo soluciones web full stack para productos reales.',
     intro:
-      'Creo experiencias web enfocadas, frontends escalables y casos de estudio técnicos que explican no solo qué se construyó, sino por qué importa.',
-    terminalRole: 'Desarrollador Full-Stack',
-    terminalFocus: ['Frontend', 'UX', 'Arquitectura'],
+      'Soy Ingeniero de Sistemas con más de 3 años de experiencia en desarrollo web, especializado en Laravel, Vue.js, infraestructura y traducción de requerimientos de negocio en soluciones funcionales.',
+    terminalRole: 'Desarrollador Full Stack Web',
+    terminalFocus: ['Laravel', 'Vue.js', 'Infraestructura', 'Clean Code'],
     capabilities: 'Capacidades',
-    stackTitle: 'El Stack',
-    stackDescription: 'Tecnologías elegidas para un portfolio fácil de mantener y desplegar.',
+    stackTitle: 'Stack principal',
+    stackDescription:
+      'Tecnologías y herramientas que uso para construir, mantener y desplegar aplicaciones web de negocio.',
+    stackControls: 'Controles del carrusel de stack',
+    stackPrevious: 'Tecnología anterior',
+    stackNext: 'Siguiente tecnología',
     selectedWork: 'Trabajo seleccionado',
     featuredProject: 'Proyecto destacado',
   },
   about: {
     title: 'Sobre mí',
     intro:
-      'Disfruto convertir ideas de producto ambiguas en interfaces claras, rápidas y fáciles de extender. Mi trabajo vive entre el detalle frontend, el criterio de producto y la arquitectura práctica.',
-    biography: 'Biografía',
-    biographyTitle: 'Biografía profesional',
+      'Ingeniero de Sistemas con experiencia en sectores como agroindustria, gestión legal, energía, servicios y plataformas comerciales. Trabajo cerca de clientes y equipos técnicos para convertir necesidades operativas en productos web claros, mantenibles y desplegables.',
+    biography: 'Perfil profesional',
+    biographyTitle: 'Desarrollador Full Stack Web',
     biographyParagraphs: [
-      'Construyo aplicaciones web con foco en mantenibilidad, código legible e interfaces que respetan a quien las usa. Prefiero sistemas simples que evolucionan fácil antes que sistemas ingeniosos difíciles de explicar.',
-      'Este portfolio está diseñado como un espacio vivo: los proyectos se agregan desde un archivo de datos, las páginas permanecen modulares y el sistema visual puede crecer sin reescribir cada vista.',
+      'Cuento con más de 3 años de experiencia en desarrollo web Full Stack, con dominio de Laravel y Vue.js. He participado en funcionalidades y módulos para proyectos de agroindustria, gestión legal, energía y servicios.',
+      'Tengo experiencia en despliegue e infraestructura, revisión de código, documentación técnica, socialización de desarrollos y acompañamiento directo a clientes y stakeholders.',
+      'Mi trabajo está orientado a la calidad mediante principios SOLID, Clean Code y PSR-12, buscando soluciones funcionales que sean sostenibles para el equipo y útiles para el negocio.',
     ],
-    philosophy: 'Filosofía central',
-    philosophyTitle: 'Precisión antes que prisa',
+    philosophy: 'Forma de trabajo',
+    philosophyTitle: 'Calidad funcional y claridad técnica',
     philosophyText:
-      'Entregar trabajo que se vea intencional, se comporte de forma predecible y siga siendo fácil de mantener.',
-    journey: 'Trayectoria',
-    journeyTitle: 'Trayectoria profesional',
+      'Construir software que resuelva necesidades reales, sea comprensible para el equipo y pueda evolucionar sin fricción innecesaria.',
+    journey: 'Experiencia',
+    journeyTitle: 'Experiencia profesional',
     timeline: [
       {
-        date: '2024 - Presente',
-        title: 'Ingeniería Frontend y de Producto',
-        text: 'Construcción de interfaces enfocadas, sistemas de proyectos y apps frontend listas para desplegar.',
+        date: '2025 - Presente',
+        title: 'Freelance | Desarrollador Full Stack',
+        text: 'Desarrollo soluciones web por proyecto, trabajando en frontend, backend, documentación, requerimientos, despliegues e infraestructura con AWS, EC2, RDS, Nginx, SSL y dominios.',
       },
       {
-        date: '2022 - 2024',
-        title: 'Desarrollo Full-Stack',
-        text: 'Creación de flujos de aplicación, APIs y bases frontend reutilizables.',
+        date: '2023 - 2025',
+        title: 'Aplicaciones Corporativas - SmartCultivo | Desarrollador Full Stack',
+        text: 'Desarrollé módulos con Vue.js 2, Element UI y Laravel 7, incluyendo PQRS, inspección de cajas, reportería, exportaciones, control por roles, code review, PRs y despliegues manuales.',
       },
       {
-        date: 'Antes',
-        title: 'Aprender construyendo',
-        text: 'Convertir experimentos en proyectos prácticos y afinar el criterio técnico.',
+        date: 'Julio 2025',
+        title: 'Universidad del Magdalena | Ingeniería de Sistemas',
+        text: 'Formación profesional en ingeniería de sistemas, complementada con experiencia práctica en desarrollo web, infraestructura y aplicaciones de negocio.',
       },
     ],
   },
   projectsPage: {
-    eyebrow: 'Muestra de ingeniería',
+    eyebrow: 'Portafolio técnico',
     title: 'Proyectos',
     intro:
-      'Una selección de proyectos técnicos enfocados en interfaces modulares, sistemas mantenibles y casos de estudio claros.',
+      'Casos de trabajo basados en proyectos reales donde participé en desarrollo full stack, infraestructura, documentación, reportería, módulos operativos y mejora de procesos.',
     filterAria: 'Filtrar proyectos por tecnología',
     all: 'Todos',
   },
   projectDetail: {
-    problemEyebrow: 'El problema',
-    problemTitle: 'El reto',
-    solutionEyebrow: 'La solución',
-    solutionTitle: 'El enfoque',
+    problemEyebrow: 'Contexto',
+    problemTitle: 'Necesidad del proyecto',
+    solutionEyebrow: 'Solución',
+    solutionTitle: 'Mi aporte',
     techStack: 'Stack técnico',
-    duration: 'Duración',
+    duration: 'Periodo',
     role: 'Rol',
     category: 'Categoría',
     impact: 'Impacto',
@@ -89,63 +99,106 @@ export default {
     codeDeployTarget: 'GitHub Pages',
   },
   footer: {
-    text: 'Construido con Vue, Vite y un poco de paciencia ingenieril.',
+    text: 'Ingeniero de Sistemas y Desarrollador Full Stack Web en Santa Marta, Colombia.',
     email: 'Correo',
+    phone: 'Teléfono',
+    location: 'Ubicación',
   },
   projects: {
     items: {
-      'nexus-engine-v2': {
-        title: 'Nexus Engine V2',
-        category: 'Arquitectura',
+      'terque-platform': {
+        title: 'Terque Platform Refactor',
+        category: 'Servicios y reservas',
         summary:
-          'Capa de orquestación de datos en tiempo real y alto rendimiento para arquitecturas de microservicios distribuidos.',
+          'Refactorización funcional hacia Laravel 12 + Livewire con autenticación, permisos, reservas, reportería, QA e infraestructura.',
         description:
-          'Un caso de estudio técnico enfocado en procesamiento de eventos, servicios resilientes y observabilidad confiable para productos en crecimiento.',
-        role: 'Desarrollador Full-Stack',
-        duration: '4 meses',
+          'Participación en la evolución técnica y funcional de Terque, alineando módulos web, landing comercial, autenticación y aplicaciones WebView con el nuevo modelo del negocio.',
+        role: 'Desarrollador Full Stack Freelance',
+        duration: '2025 - Presente',
         problem:
-          'Los equipos de producto necesitaban visibilidad más rápida sobre eventos distribuidos sin sumar complejidad operativa a cada servicio.',
+          'La plataforma requería modernizar funcionalidades clave, ajustar flujos operativos, reforzar autenticación y permisos, y habilitar un entorno controlado para validación técnica del equipo.',
         solution:
-          'El proyecto introduce una capa de ingestión tipada, procesamiento basado en colas y dashboards enfocados que facilitan entender la actividad del sistema.',
+          'Participé en la refactorización hacia Laravel 12 + Livewire, implementé autenticación social, roles y permisos, verificaciones, reservas, descuentos, notificaciones, dashboard, reportería y mejoras operativas. También configuré un entorno QA con EC2, RDS, Nginx, SSL y dominio.',
         impact: [
-          { label: 'Visibilidad de eventos', value: '92%' },
-          { label: 'Tiempo de depuración ahorrado', value: '48%' },
+          { label: 'Refactor funcional', value: '90%' },
+          { label: 'Entorno QA habilitado', value: '100%' },
+          { label: 'Módulos operativos mejorados', value: '85%' },
         ],
       },
-      'quant-analytics': {
-        title: 'Quant Analytics',
-        category: 'Dashboard',
+      'smartcultivo-pqrs-inspection': {
+        title: 'SmartCultivo PQRS e Inspección',
+        category: 'Agroindustria',
         summary:
-          'Interfaz de analítica financiera con gráficos responsivos, paneles de métricas y flujos claros de reportes.',
+          'Módulos productivos para gestión PQRS, inspección de cajas, reportería visual, exportables y control por roles.',
         description:
-          'Un concepto de dashboard pulido para revisar tendencias, comparar datasets y presentar insights técnicos con claridad.',
-        role: 'Desarrollador Frontend',
-        duration: '6 semanas',
+          'Desarrollo full stack en SmartCultivo con Vue.js 2, Element UI y Laravel 7, apoyando procesos críticos del cultivo de banano y la operación interna.',
+        role: 'Desarrollador Full Stack',
+        duration: '2023 - 2025',
         problem:
-          'Las vistas de datos complejas eran difíciles de escanear rápidamente, especialmente en pantallas pequeñas y revisiones con stakeholders.',
+          'La operación necesitaba centralizar solicitudes, mejorar trazabilidad, reducir procesos manuales y soportar inspecciones productivas con información clara y exportable.',
         solution:
-          'La interfaz agrupa métricas por prioridad, usa áreas de gráficos responsivas y da a cada reporte un camino directo hacia análisis más profundo.',
+          'Implementé el módulo de PQRS en producción, desarrollé el módulo de inspección de cajas, construí reportes visuales con Highcharts, exportables y flujos con control por roles. También participé en code review, PRs, despliegues manuales, documentación y soporte operativo.',
         impact: [
-          { label: 'Claridad de reportes', value: '87%' },
-          { label: 'Velocidad de revisión', value: '39%' },
+          { label: 'PQRS centralizadas', value: '90%' },
+          { label: 'Trazabilidad operativa', value: '85%' },
+          { label: 'Reporterías y exportables', value: '88%' },
         ],
       },
-      'core-ui-system': {
-        title: 'Core UI System',
-        category: 'Sistema de diseño',
+      'energy-community-platform': {
+        title: 'Energy Community Platform',
+        category: 'Energía',
         summary:
-          'Sistema de componentes reutilizables para interfaces de producto con espaciado, estados y patrones accesibles consistentes.',
+          'Construcción de módulos completos para operación, gestión comunitaria, publicaciones, votaciones, beneficiarios y facturación.',
         description:
-          'Una base UI modular que prioriza componentes predecibles, tokens de diseño prácticos e implementación rápida.',
-        role: 'Ingeniero UI',
-        duration: '8 semanas',
+          'Desarrollo de funcionalidades frontend con Vue.js 3 orientadas a operación real, participación comunitaria y mantenimiento de una plataforma del sector energético.',
+        role: 'Desarrollador Full Stack Freelance',
+        duration: '2025 - Presente',
         problem:
-          'El trabajo repetido de interfaz estaba frenando la entrega de features y generando estados inconsistentes en el producto.',
+          'El producto requería módulos nuevos desde cero para gestionar procesos comunitarios y operativos vinculados a energía, facturación, participación y mantenimiento.',
         solution:
-          'El sistema define primitivas de layout, patrones de cards, badges, botones y comportamiento responsivo reutilizable entre vistas.',
+          'Construí módulos clave del frontend con Vue.js 3, incluyendo dashboard, publicaciones, votaciones, beneficiarios, facturación y operación y mantenimiento, siguiendo requerimientos funcionales del negocio.',
         impact: [
-          { label: 'Reutilización de componentes', value: '76%' },
-          { label: 'Deriva visual reducida', value: '64%' },
+          { label: 'Módulos construidos desde cero', value: '92%' },
+          { label: 'Cobertura operativa', value: '86%' },
+          { label: 'Participación comunitaria', value: '80%' },
+        ],
+      },
+      'sil-legal-innovation': {
+        title: 'SIL - Sitio de Innovación Legal',
+        category: 'Gestión legal',
+        summary:
+          'Formularios, flujos funcionales y generación documental con Docx ajustada a modelos del equipo legal.',
+        description:
+          'Desarrollo de funcionalidades para gestión legal, automatizando formularios y salidas documentales alineadas a estructuras requeridas por el equipo jurídico.',
+        role: 'Desarrollador Full Stack Freelance',
+        duration: '2025 - Presente',
+        problem:
+          'El equipo legal necesitaba capturar información mediante formularios, estructurar flujos funcionales y generar documentos acordes a modelos específicos.',
+        solution:
+          'Desarrollé formularios, flujos funcionales y generación de documentos con Docx, adaptando las salidas documentales a las estructuras requeridas por el equipo legal.',
+        impact: [
+          { label: 'Automatización documental', value: '88%' },
+          { label: 'Flujos funcionales', value: '84%' },
+          { label: 'Ajuste a modelos legales', value: '90%' },
+        ],
+      },
+      'my-wish-list-reporting': {
+        title: 'My Wish List Reporting',
+        category: 'Servicios',
+        summary:
+          'Funcionalidades de negocio para bancos, métodos de pago y generación de reportes exportables en Excel.',
+        description:
+          'Implementación de módulos y recursos de negocio usando Vue.js y Node.js para mejorar gestión financiera, métodos de pago y reportería.',
+        role: 'Desarrollador Full Stack Freelance',
+        duration: '2025 - Presente',
+        problem:
+          'La plataforma necesitaba administrar recursos asociados a bancos, métodos de pago y reportería exportable para operación y seguimiento interno.',
+        solution:
+          'Implementé funcionalidades con Vue.js y Node.js para gestión de bancos, métodos de pago y generación de reportes exportables en Excel.',
+        impact: [
+          { label: 'Gestión de bancos', value: '86%' },
+          { label: 'Métodos de pago', value: '82%' },
+          { label: 'Reportes exportables', value: '90%' },
         ],
       },
     },

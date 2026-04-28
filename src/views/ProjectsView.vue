@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import ProjectCard from '../components/ProjectCard.vue'
 import { useLocalizedProjects } from '../composables/useLocalizedProjects'
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const { projects } = useLocalizedProjects()
 const allFilter = 'All'
 const selectedTech = ref(allFilter)

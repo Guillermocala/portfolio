@@ -1,14 +1,20 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { setLocale, supportedLocales } from '../i18n'
 
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
+const currentLocale = computed(() => locale.value)
 
 const navItems = [
   { labelKey: 'nav.home', to: '/' },
   { labelKey: 'nav.projects', to: '/projects' },
   { labelKey: 'nav.about', to: '/about' },
 ]
+
+function handleLocaleChange(nextLocale) {
+  setLocale(nextLocale)
+}
 </script>
 
 <template>
@@ -16,7 +22,7 @@ const navItems = [
     <nav class="navbar container">
       <RouterLink class="brand" to="/">
         <span class="material-symbols-outlined">terminal</span>
-        <span>DevPortfolio</span>
+        <span>{{ t('common.name') }}</span>
       </RouterLink>
 
       <div class="nav-links" :aria-label="t('nav.aria')">
@@ -34,7 +40,7 @@ const navItems = [
       <div class="nav-actions">
         <div
           class="language-switcher"
-          :class="`language-switcher--${locale}`"
+          :class="`language-switcher--${currentLocale}`"
           :aria-label="t('nav.language')"
           role="group"
         >
@@ -43,10 +49,10 @@ const navItems = [
             v-for="availableLocale in supportedLocales"
             :key="availableLocale"
             type="button"
-            :aria-pressed="locale === availableLocale"
-            :class="{ 'language-switcher__button--active': locale === availableLocale }"
+            :aria-pressed="currentLocale === availableLocale"
+            :class="{ 'language-switcher__button--active': currentLocale === availableLocale }"
             class="language-switcher__button"
-            @click="setLocale(availableLocale)"
+            @click="handleLocaleChange(availableLocale)"
           >
             {{ availableLocale.toUpperCase() }}
           </button>
